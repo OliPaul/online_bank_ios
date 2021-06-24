@@ -7,19 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A01E16B268243F4004D7632 /* AuthFieldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A01E16A268243F4004D7632 /* AuthFieldsView.swift */; };
 		4A767BD626735CA90086AC05 /* OnlineBankApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A767BD526735CA90086AC05 /* OnlineBankApp.swift */; };
 		4A767BD826735CA90086AC05 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A767BD726735CA90086AC05 /* ContentView.swift */; };
 		4A767BDA26735CAB0086AC05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A767BD926735CAB0086AC05 /* Assets.xcassets */; };
 		4A767BDD26735CAB0086AC05 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A767BDC26735CAB0086AC05 /* Preview Assets.xcassets */; };
+		4A767BE726735FFF0086AC05 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A767BE626735FFF0086AC05 /* AuthenticationView.swift */; };
+		4A9F42792683757800F74852 /* AuthIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F42782683757800F74852 /* AuthIconView.swift */; };
+		4A9F427E26837DD000F74852 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F427D26837DD000F74852 /* LoginRequest.swift */; };
+		4A9F428226837DDF00F74852 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F428126837DDF00F74852 /* LoginResponse.swift */; };
+		4A9F428526837FB000F74852 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F428426837FB000F74852 /* Login.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A01E16A268243F4004D7632 /* AuthFieldsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFieldsView.swift; sourceTree = "<group>"; };
 		4A767BD226735CA90086AC05 /* OnlineBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A767BD526735CA90086AC05 /* OnlineBankApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineBankApp.swift; sourceTree = "<group>"; };
 		4A767BD726735CA90086AC05 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4A767BD926735CAB0086AC05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A767BDC26735CAB0086AC05 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4A767BDE26735CAB0086AC05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A767BE626735FFF0086AC05 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		4A9F42782683757800F74852 /* AuthIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthIconView.swift; sourceTree = "<group>"; };
+		4A9F427D26837DD000F74852 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		4A9F428126837DDF00F74852 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		4A9F428426837FB000F74852 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A01E16D26824400004D7632 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				4A01E16A268243F4004D7632 /* AuthFieldsView.swift */,
+				4A9F42782683757800F74852 /* AuthIconView.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
 		4A767BC926735CA90086AC05 = {
 			isa = PBXGroup;
 			children = (
@@ -52,6 +73,7 @@
 		4A767BD426735CA90086AC05 /* OnlineBank */ = {
 			isa = PBXGroup;
 			children = (
+				4A767BE526735F690086AC05 /* authentication */,
 				4A767BD526735CA90086AC05 /* OnlineBankApp.swift */,
 				4A767BD726735CA90086AC05 /* ContentView.swift */,
 				4A767BD926735CAB0086AC05 /* Assets.xcassets */,
@@ -67,6 +89,42 @@
 				4A767BDC26735CAB0086AC05 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4A767BE526735F690086AC05 /* authentication */ = {
+			isa = PBXGroup;
+			children = (
+				4A9F427B26837AB200F74852 /* services */,
+				4A01E16D26824400004D7632 /* components */,
+				4A767BE626735FFF0086AC05 /* AuthenticationView.swift */,
+			);
+			path = authentication;
+			sourceTree = "<group>";
+		};
+		4A9F427B26837AB200F74852 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				4A9F428726847E8800F74852 /* use_case */,
+				4A9F427C26837DAF00F74852 /* dto */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		4A9F427C26837DAF00F74852 /* dto */ = {
+			isa = PBXGroup;
+			children = (
+				4A9F427D26837DD000F74852 /* LoginRequest.swift */,
+				4A9F428126837DDF00F74852 /* LoginResponse.swift */,
+			);
+			path = dto;
+			sourceTree = "<group>";
+		};
+		4A9F428726847E8800F74852 /* use_case */ = {
+			isa = PBXGroup;
+			children = (
+				4A9F428426837FB000F74852 /* Login.swift */,
+			);
+			path = use_case;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +196,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A01E16B268243F4004D7632 /* AuthFieldsView.swift in Sources */,
 				4A767BD826735CA90086AC05 /* ContentView.swift in Sources */,
 				4A767BD626735CA90086AC05 /* OnlineBankApp.swift in Sources */,
+				4A9F427E26837DD000F74852 /* LoginRequest.swift in Sources */,
+				4A9F42792683757800F74852 /* AuthIconView.swift in Sources */,
+				4A767BE726735FFF0086AC05 /* AuthenticationView.swift in Sources */,
+				4A9F428226837DDF00F74852 /* LoginResponse.swift in Sources */,
+				4A9F428526837FB000F74852 /* Login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
