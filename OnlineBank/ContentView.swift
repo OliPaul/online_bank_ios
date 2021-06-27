@@ -13,7 +13,7 @@ struct ContentView: View {
     var body: some View {
         VStack () {
             Spacer()
-            AuthenticationView()
+            LoginView()
             Spacer()
         }
         .background(Color.blue.brightness(0.25).ignoresSafeArea())

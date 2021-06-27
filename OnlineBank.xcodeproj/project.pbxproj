@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,11 +12,17 @@
 		4A767BD826735CA90086AC05 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A767BD726735CA90086AC05 /* ContentView.swift */; };
 		4A767BDA26735CAB0086AC05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A767BD926735CAB0086AC05 /* Assets.xcassets */; };
 		4A767BDD26735CAB0086AC05 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A767BDC26735CAB0086AC05 /* Preview Assets.xcassets */; };
-		4A767BE726735FFF0086AC05 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A767BE626735FFF0086AC05 /* AuthenticationView.swift */; };
+		4A767BE726735FFF0086AC05 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A767BE626735FFF0086AC05 /* LoginView.swift */; };
 		4A9F42792683757800F74852 /* AuthIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F42782683757800F74852 /* AuthIconView.swift */; };
 		4A9F427E26837DD000F74852 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F427D26837DD000F74852 /* LoginRequest.swift */; };
 		4A9F428226837DDF00F74852 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F428126837DDF00F74852 /* LoginResponse.swift */; };
 		4A9F428526837FB000F74852 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F428426837FB000F74852 /* Login.swift */; };
+		4A9F428B2684882E00F74852 /* URLResponseExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F428A2684882E00F74852 /* URLResponseExt.swift */; };
+		4A9F428F26849D9D00F74852 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F428E26849D9D00F74852 /* StringExt.swift */; };
+		4A9F42922684D23000F74852 /* ViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F42912684D23000F74852 /* ViewExt.swift */; };
+		4A9F42962687341300F74852 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F42952687341200F74852 /* Keychain.swift */; };
+		4A9F429A268735BE00F74852 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 4A9F4299268735BE00F74852 /* SwiftKeychainWrapper */; };
+		4A9F429F2687C8CC00F74852 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F429E2687C8CC00F74852 /* DashboardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,11 +33,16 @@
 		4A767BD926735CAB0086AC05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A767BDC26735CAB0086AC05 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4A767BDE26735CAB0086AC05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4A767BE626735FFF0086AC05 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		4A767BE626735FFF0086AC05 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4A9F42782683757800F74852 /* AuthIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthIconView.swift; sourceTree = "<group>"; };
 		4A9F427D26837DD000F74852 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		4A9F428126837DDF00F74852 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		4A9F428426837FB000F74852 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		4A9F428A2684882E00F74852 /* URLResponseExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLResponseExt.swift; sourceTree = "<group>"; };
+		4A9F428E26849D9D00F74852 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		4A9F42912684D23000F74852 /* ViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExt.swift; sourceTree = "<group>"; };
+		4A9F42952687341200F74852 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		4A9F429E2687C8CC00F74852 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A9F429A268735BE00F74852 /* SwiftKeychainWrapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +85,9 @@
 		4A767BD426735CA90086AC05 /* OnlineBank */ = {
 			isa = PBXGroup;
 			children = (
+				4A9F429D2687C87C00F74852 /* dashboard */,
+				4A9F4294268733FB00F74852 /* utils */,
+				4A9F42892684880100F74852 /* extensions */,
 				4A767BE526735F690086AC05 /* authentication */,
 				4A767BD526735CA90086AC05 /* OnlineBankApp.swift */,
 				4A767BD726735CA90086AC05 /* ContentView.swift */,
@@ -96,7 +111,7 @@
 			children = (
 				4A9F427B26837AB200F74852 /* services */,
 				4A01E16D26824400004D7632 /* components */,
-				4A767BE626735FFF0086AC05 /* AuthenticationView.swift */,
+				4A767BE626735FFF0086AC05 /* LoginView.swift */,
 			);
 			path = authentication;
 			sourceTree = "<group>";
@@ -127,6 +142,32 @@
 			path = use_case;
 			sourceTree = "<group>";
 		};
+		4A9F42892684880100F74852 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4A9F428A2684882E00F74852 /* URLResponseExt.swift */,
+				4A9F428E26849D9D00F74852 /* StringExt.swift */,
+				4A9F42912684D23000F74852 /* ViewExt.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		4A9F4294268733FB00F74852 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				4A9F42952687341200F74852 /* Keychain.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		4A9F429D2687C87C00F74852 /* dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				4A9F429E2687C8CC00F74852 /* DashboardView.swift */,
+			);
+			path = dashboard;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +184,9 @@
 			dependencies = (
 			);
 			name = OnlineBank;
+			packageProductDependencies = (
+				4A9F4299268735BE00F74852 /* SwiftKeychainWrapper */,
+			);
 			productName = OnlineBank;
 			productReference = 4A767BD226735CA90086AC05 /* OnlineBank.app */;
 			productType = "com.apple.product-type.application";
@@ -170,6 +214,9 @@
 				Base,
 			);
 			mainGroup = 4A767BC926735CA90086AC05;
+			packageReferences = (
+				4A9F4298268735BE00F74852 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+			);
 			productRefGroup = 4A767BD326735CA90086AC05 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -197,12 +244,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A01E16B268243F4004D7632 /* AuthFieldsView.swift in Sources */,
+				4A9F428B2684882E00F74852 /* URLResponseExt.swift in Sources */,
 				4A767BD826735CA90086AC05 /* ContentView.swift in Sources */,
 				4A767BD626735CA90086AC05 /* OnlineBankApp.swift in Sources */,
+				4A9F42922684D23000F74852 /* ViewExt.swift in Sources */,
+				4A9F42962687341300F74852 /* Keychain.swift in Sources */,
+				4A9F428F26849D9D00F74852 /* StringExt.swift in Sources */,
 				4A9F427E26837DD000F74852 /* LoginRequest.swift in Sources */,
 				4A9F42792683757800F74852 /* AuthIconView.swift in Sources */,
-				4A767BE726735FFF0086AC05 /* AuthenticationView.swift in Sources */,
+				4A767BE726735FFF0086AC05 /* LoginView.swift in Sources */,
 				4A9F428226837DDF00F74852 /* LoginResponse.swift in Sources */,
+				4A9F429F2687C8CC00F74852 /* DashboardView.swift in Sources */,
 				4A9F428526837FB000F74852 /* Login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +442,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4A9F4298268735BE00F74852 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4A9F4299268735BE00F74852 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A9F4298268735BE00F74852 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4A767BCA26735CA90086AC05 /* Project object */;
 }
