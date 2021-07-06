@@ -11,12 +11,15 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-        VStack () {
-            Spacer()
-            LoginView()
-            Spacer()
+        NavigationView {
+            VStack () {
+                Spacer()
+                LoginView()
+                Spacer()
+            }
+            .background(Color.blue.brightness(0.25).ignoresSafeArea())
         }
-        .background(Color.blue.brightness(0.25).ignoresSafeArea())
+        .navigationBarHidden(true)
         
     }
 }

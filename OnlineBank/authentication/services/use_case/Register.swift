@@ -1,19 +1,19 @@
 //
-//  Login.swift
+//  Register.swift
 //  OnlineBank
 //
-//  Created by Paul Olivier on 23/06/2021.
+//  Created by Paul Olivier on 27/06/2021.
 //
 
 import Foundation
 
-class Login: ObservableObject {
+class Register: ObservableObject {
     
-    @Published var authenticated = false
+    @Published var registered = false
     var backUrl = ProcessInfo.processInfo.environment["BACK_URL"] ?? ""
 
-    func execute(request: LoginRequest, completion: @escaping (Bool) -> ()) {
-        guard let url = URL(string: "\(backUrl)/auth/login") else { return }
+    func execute(request: RegisterRequest, completion: @escaping (Bool) -> ()) {
+        guard let url = URL(string: "\(backUrl)/auth/register") else { return }
 
         let finalBody = try! JSONEncoder().encode(request)
 
@@ -23,26 +23,23 @@ class Login: ObservableObject {
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
             URLSession.shared.dataTask(with: request) { (data, response, error) in
-                guard let data = data else { return }
                 let statusCode = response?.statusCode()
                 
                 if statusCode! == 200 {
-                    let response = try! JSONDecoder().decode(LoginResponse.self, from: data)
-                    let loginResponse = try! JSONEncoder().encode(response)
                     
                     DispatchQueue.main.async {
-                        //Store token
-                        Keychain().store(key: "user", value: loginResponse)
-                        self.authenticated = true
-                        completion(self.authenticated)
+                        
+                        self.registered = true
+                        completion(self.registered)
                         
                     }
                 }else {
                     DispatchQueue.main.async {
-                        self.authenticated = false
-                        completion(self.authenticated)
+                        self.registered = false
+                        completion(self.registered)
                     }
                 }
             }.resume()
         }
 }
+

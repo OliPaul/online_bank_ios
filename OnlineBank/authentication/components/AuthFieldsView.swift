@@ -23,6 +23,7 @@ struct AuthFieldsComponent: View {
             .border(errors["email"] as! Bool ? Color.red : Color.clear)
             .padding(.bottom, 20)
             .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+            .keyboardType(.emailAddress)
             .onChange(of: self.email, perform: { value in
                 errors["email"] = false
                 errors["message"] = ""

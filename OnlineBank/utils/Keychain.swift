@@ -14,7 +14,15 @@ class Keychain {
         KeychainWrapper.standard.set(value, forKey: key)
     }
     
+    public func store(key: String, value: Data) {
+        KeychainWrapper.standard.set(value, forKey: key)
+    }
+    
     public func get(key: String) -> String? {
         return KeychainWrapper.standard.string(forKey: key)
+    }
+    
+    public func get(key: String) -> Data? {
+        return KeychainWrapper.standard.data(forKey: key)
     }
 }
