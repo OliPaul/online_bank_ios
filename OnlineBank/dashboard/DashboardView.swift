@@ -10,44 +10,57 @@ import SwiftUI
 struct DashboardView: View {
     
     @State private var transactions = [Transaction]()
+    @State private var accounts = [Account]()
+    @Binding var selectedTab: Int
+
     
     var body: some View {
-        VStack {
-            Spacer()
-            HStack {
-                Text("Compte courant")
-                Spacer()
-                Text("1500€")
-            }
-            .padding()
-            .background(Color.blue.brightness(0.4))
-            .cornerRadius(5.0)
-            HStack {
-                Text("Compte épargne")
-                Spacer()
-                Text("100 000€")
-            }
-            .padding()
-            .background(Color.blue.brightness(0.4))
-            .cornerRadius(5.0)
-            Spacer()
-            Text("Last transaction")
-            List(transactions) { transaction in
-                TransactionRowView(transaction: transaction)
+        VStack(alignment: .leading) {
+            VStack  {
+                ForEach(accounts) { account in
+                    AccountCard(account: account)
+                }
+                
             }
             .onAppear() {
-                GetTransactionsList().execute() { transactions in
-                    
-                    self.transactions = transactions
+                GetAccountsList().execute() { accounts in
+                    self.accounts = accounts
                 }
             }
-            
+            HStack {
+                Text("Last transactions")
+                    .font(.title)
+                Spacer()
+                Button("more") {
+                    self.selectedTab = 0
+                }
+            }
+            .padding(.horizontal)
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    ForEach(transactions) { transaction in
+                        TransactionCardView(transaction: transaction)
+                    }
+                    
+                }
+                .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.1), lineWidth: 1)
+                        )
+                .padding([.bottom, .horizontal])
+                .onAppear() {
+                    GetTransactionsList().execute() { transactions in
+                        let transactionListReversed = transactions.reversed()
+                        let transactionList = Array(transactionListReversed)
+                        
+                        if transactionList.count > 5 {
+                            self.transactions = Array(transactionList[..<5])
+                        }else {
+                            self.transactions = transactionList
+                        }
+                    }
+                }
+            }
         }
-    }
-}
-
-struct DashboardView_Previews: PreviewProvider {
-    static var previews: some View {
-        DashboardView()
     }
 }

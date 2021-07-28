@@ -1,23 +1,33 @@
 //
-//  TransactionRowView.swift
+//  TransactionCardView.swift
 //  OnlineBank
 //
-//  Created by Paul Olivier on 08/07/2021.
+//  Created by Paul Olivier on 28/06/2021.
 //
 
 import SwiftUI
 
-struct TransactionRowView: View {
+struct TransactionCardView: View {
     
     var transaction: Transaction = Transaction(userId: "userID", accountNumber: "AccountNumber", amount: 200, type: "TRANSACTION_TYPE_PAYMENT", status: "Status", created_at: "Date", updated_at: "date")
     @State private var transactionType = ""
     @State private var amount = ""
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
+        VStack {
+            HStack {
+                Spacer()
+                Text(transaction.created_at.split(separator: "T")[0])
+                    .font(.footnote)
+                    .fontWeight(.thin)
+            }
+            VStack {
+                Text("\(amount) €")
+                    .font(.title3)
+                    .bold()
                 Text(transactionType)
                     .font(.title3)
+                    .fontWeight(.light)
                     .onAppear() {
                         switch transaction.type {
                         case "TRANSACTION_TYPE_PAYMENT":
@@ -38,27 +48,23 @@ struct TransactionRowView: View {
                         }
                         
                     }
-                Text(transaction.created_at.split(separator: "T")[0])
-                    .font(.footnote)
-                    .fontWeight(.light)
-                Text(transaction.accountNumber)
-                    .font(.system(size: 10))
-                    .fontWeight(.thin)
                 
             }
             
-            Spacer()
-            Text("\(amount) €")
-                .foregroundColor(transactionType == "Payment"
-                                    ? .green
-                                : .red)
         }
-        .padding()
+        .frame(width: 100, height: 100, alignment: .leading)
+        .padding([.horizontal])
+        .background(transaction.type == "TRANSACTION_TYPE_PAYMENT" ? Color.green.brightness(0.1) : Color.red.brightness(0.1))
+        .cornerRadius(10.0)
+        .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.1), lineWidth: 1)
+                )
     }
 }
 
-struct TransactionRowView_Previews: PreviewProvider {
+struct TransactionCardView_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionRowView()
+        TransactionCardView()
     }
 }

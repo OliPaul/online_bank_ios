@@ -8,19 +8,23 @@
 import SwiftUI
 
 struct TransactionView: View {
+    
+    @State private var transactions = [Transaction]()
+    
     var body: some View {
-        NavigationView {
-            VStack {
-                Text("Transactions")
+        VStack {
+            List(transactions) { transaction in
+                TransactionRowView(transaction: transaction)
+            }
+            .onAppear() {
+                GetTransactionsList().execute() { transactions in
+                    let transactionListReversed = transactions.reversed()
+                    let transactionList = Array(transactionListReversed)
+                    
+                    self.transactions = transactionList
+                }
             }
         }
-        .toolbar(content: {
-            ToolbarItemGroup {
-            Button(action: {}, label: {
-                Image(systemName: "plus")
-            })
-            }
-        })
     }
 }
 
